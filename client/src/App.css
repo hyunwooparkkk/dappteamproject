@@ -1,24 +1,24 @@
 .App {
-  text-align: center;
+  /* text-align: center;
   margin: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; */
 }
 
 
 
 .section {
-  text-align: left;
+  /* text-align: left;
   max-width: 720px;
-  margin: 4rem auto auto;
+  margin: 4rem auto auto; */
 }
 
 /* LoadingContainer */
 .container {
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   width: calc(100% - 60px);
   max-width: 720px;
   padding: 45px 20px;
-  margin: 0 auto;
+  margin: 0 auto; */
 }
 
 /*
@@ -31,11 +31,11 @@
 
 /* custom style */
 .Menu-header {
-  background-color: #222;
+  /* background-color: #222;
   height: 60px;
   padding: 10px;
   color: white;
-  align-content: center;
+  align-content: center; */
 }
 
 .Menu-item {

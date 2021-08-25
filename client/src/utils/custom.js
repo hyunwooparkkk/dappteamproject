@@ -1,3 +1,9 @@
+import $ from 'jquery';
+import WOW from 'wow.js';
+import React, {useEffect} from 'react';
+import Slider from "slick-slider";
+import TypeIt from "typeit-react";
+
 $(function(){
     // Slick Slider = welcome
     
@@ -30,14 +36,17 @@ $(function(){
         breakLines: false, // 줄 바꿈 사용안함
       });
 
+      useEffect(() => {
+        new WOW.WOW().init();
+      }, []);
       // Wow Scroll
-      wow = new WOW(
+      /*wow = new WOW(
         {
         boxClass:     'wow',      // default
         offset:       150,          // default
         mobile:       false,       // default
       })
-      wow.init();
+      wow.init();*/
 })
 
 // Faq Accoirdion 쿼리 오류 때문에 위의 코드와 따로 적음
