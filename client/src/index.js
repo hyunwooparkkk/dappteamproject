@@ -2,7 +2,7 @@
 import * as serviceWorker from './serviceWorker';
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "../src/css/homepage.css";
 import App from "./App";
 
 import { createStore, applyMiddleware } from "redux";
