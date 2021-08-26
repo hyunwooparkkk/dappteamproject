@@ -37,7 +37,11 @@ $(function(){
       });
 
       useEffect(() => {
-        new WOW.WOW().init();
+        new WOW.WOW({
+          boxClass:     'wow',      // default
+        offset:       150,          // default
+        mobile:       false,       // default
+        }).init();
       }, []);
       // Wow Scroll
       /*wow = new WOW(

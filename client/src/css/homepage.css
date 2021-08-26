@@ -139,8 +139,12 @@ header.active{
     float: right;
 }
 .gnb a{
-    margin: 10px;
-    font-size: 16px;
+    margin: 20px;
+    font-size: 40px;
+}
+.gnb a:hover{
+    filter: invert(76%) sepia(86%) saturate(920%) hue-rotate(355deg) brightness(99%) contrast(91%);
+    transition: 0.3s;
 }
 
 /*######################## welcome section Start ########################*/
@@ -240,8 +244,9 @@ header.active{
 
 /* ########### CEO - Access Section ##################### */
 
-.ceo-access{
+#feature1.ceo-access{
     padding-bottom: 0;
+    width: 97%;
 }
 .ceo-inner, .access-inner{
     width: 1300px;
@@ -317,6 +322,10 @@ header.active{
 }
 .btn-download{
     margin-top: 30px;
+
+}
+.btn-download img{
+    margin: 0 5px;
 }
 
 
@@ -377,16 +386,44 @@ input[name=tabmenu]{
     padding-top: 20px;
     padding-left: 50px;
 }
+.tab.tab1{
+    display: block;
+}
 .tab h2{
     font-size: 32px;
     font-weight: bold;
 }
 
 /* Checked Function */
-input[id=tab1]:checked ~ .tabs .tab1,
-input[id=tab2]:checked ~ .tabs .tab2,
+input[id=tab1]:checked ~ .tabs .tab1{
+    display: block;
+}
+input[id=tab1]:checked ~ .tabs .tab2{
+    display: none;
+}
+input[id=tab1]:checked ~ .tabs .tab3{
+    display: none;
+}
+
+input[id=tab2]:checked ~ .tabs .tab2{
+    display: block;
+}
+input[id=tab2]:checked ~ .tabs .tab1{
+    display: none;
+}
+input[id=tab2]:checked ~ .tabs .tab3{
+    display: none;
+}
+
+
 input[id=tab3]:checked ~ .tabs .tab3{
     display: block;
+}
+input[id=tab3]:checked ~ .tabs .tab1{
+    display: none;
+}
+input[id=tab3]:checked ~ .tabs .tab2{
+    display: none;
 }
 input[id=tab1]:checked ~ .tab-btn label[for=tab1] em,
 input[id=tab2]:checked ~ .tab-btn label[for=tab2] em,
