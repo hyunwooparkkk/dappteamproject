@@ -6,8 +6,16 @@ import 'filepond/dist/filepond.min.css';
 import logo from '../images/ipfs-logo.png';
 import { useDispatch,useSelector } from "react-redux";
 import '../css/filepond-custom.css';
-import '../App.css';
+// import '../App.css';
 import ipfs from '../utils/ipfs';
+import $ from 'jquery';
+import { Link } from 'react-router-dom';
+import create from '../css/Create.css';
+import { BiUserCircle , BiWallet } from "react-icons/bi";
+import {FaShopify} from "react-icons/fa";
+import {GoDiffAdded} from "react-icons/go";
+
+
 
 // import '../css/bootstrap/css/bootstrap.min.css';
 import Createupload from './Createupload';
@@ -113,13 +121,71 @@ function Create() {
         console.log(dodo,"adw");
     }
 
+    $(window).scroll(function(){
+        if($(window).scrollTop() > 50){
+          $('header , .btn-top').addClass('active')
+        }
+        else{
+          $('header , .btn-top').removeClass('active')
+        }
+      })
+      // Header Trigger
+      $('.trigger').click(function(){
+        $(this).toggleClass('active');
+        $('.gnb').togleClass('active');
+      });
+    
+      $('.gnb a, section').click(function(){
+        $('.gnb , .trigger').removeClass('active');
+      });
+
     return (
         <div className="container">
-            <div style={{textAlign: 'center'}}>
+            {/*header start */}
+          <header>
+            <div className="header-inner">
+              <div className="logo">
+                <Link to="/"><img src="/images/logo1.png"></img></Link>
+              </div>
+              <div className='gnb'>
+                <Link to="/Create" ><GoDiffAdded className="gnb-1"/></Link>
+                <Link to="/Market" ><FaShopify className="gnb-2"/></Link>
+                <Link to="/Mypage" ><BiUserCircle className="gnb-3"/></Link>
+                <Link to="/Signin" ><BiWallet className="gnb-4"/></Link>
+              </div>
+            </div>
+            <div className="trigger"></div>
+          </header>
+          {/*welcome start */}
+
+          <section className="welcome">
+            <div className="slideshow">
+            
+              <img src="/images/create-welcome1.jpg"/>
+             
+            </div>
+            <div className="welcome-heading">
+              <span>
+                당신만의 U1L 한 NFT !! 지금 만들어보세요!
+              </span>
+              <h1>
+                Make Your Own NFT On U1L.
+                <em id="typing"></em>
+              </h1>
+              <p>
+                on the KOREA's largest NFT marketplace
+              </p>
+              
+            </div>
+            
+          </section>
+            {/* <div className="guide-inner" style={{}}>
             <img src={logo} alt="ipfs-logo" width={70} height={70}/>
-                    <h1>IPFS Image Upload</h1>
+                    <h1>NFT 로 만들 아이템을 업로드 해주세요!</h1>
                     <br/><br/>
             </div>
+            
+            <section>
             <div>
             <FilePond ref={test}
                               onupdatefiles={(fileItems) => {
@@ -128,13 +194,14 @@ function Create() {
                                     fileItems.map(fileItem => fileItem.file)
                               ));
                               }}>
-                            {/* > */}
+                            
                         {upload.files.map(file => (
                             <input type="file" key={file} src={file} />
                         ))}
                   
             </FilePond>
             </div>
+            </section> */}
             <div>
                     {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
                 </div>

@@ -1,0 +1,228 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*XEIcon 2.3.3 CDN*/
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* Web Fonts - Source Sans Pro */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+/* Noonnu Fonts = NEXON Lv2 Godic - Regular */
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset CSS */
+
+*{
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+/* .Link{
+    text-decoration: none;
+    color: #222;
+} */
+button, input {
+    outline: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+
+/* Default CSS */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'NEXON Lv2 Gothic', sans-serif;
+    font-size: 18px;
+    line-height: 1.7em;
+    margin: 0;
+    background-color: #fff;
+    color: #222;
+}
+body.active{
+    overflow: hidden;
+}
+section{
+    padding: 130px 0;
+}
+
+/*Section Display */
+ /* header{ display: none;} */
+/* .welcome{display: none;}
+.ceo-access{display: none;}
+.banner{display: none;}
+.feature{display: none;}
+.vision{display: none;}
+.faq{display: none;}
+.review{display: none;}
+.focus{display: none;}
+.guide{display: none;}
+.news{display: none;}
+footer{display: none;} */
+
+/* Common CSS */
+.headline-share{
+    text-align: center;
+}
+.headline-share h1 {
+    font-size: 44px;
+    position: relative;
+    padding-bottom: 20px;
+    /* border: 1px solid #000; */
+}
+.headline-share h1:after{
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 80px;
+    background: linear-gradient(to right,#6c5ce7,#a29bfe );
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.headline-share p {
+    font-size: 20px;
+}
+.btn-top{
+    position: fixed;
+    /* border: 1px solid red; */
+    right: 20px;
+    bottom: -50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.514);
+    color: #fff;
+    line-height: 43px;
+    text-align: center;
+    transition: 0.5s;
+}
+.btn-top.active{
+    bottom: 20px;
+}
+/*######################## Header Start ########################*/
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    transition: 0.5s;
+    
+}
+header.active{
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.062);
+}
+.header-inner{
+    width: 1300px; 
+    margin: auto;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.logo{
+    float: left;
+}
+.logo img{
+    margin-top: -7px;
+}
+.gnb{
+    float: right;
+}
+.gnb a{
+    margin: 20px;
+    font-size: 40px;
+}
+.gnb a .gnb-1:hover{
+    filter: invert(41%) sepia(66%) saturate(518%) hue-rotate(160deg) brightness(95%) contrast(96%);
+    transition: 0.3s;
+}
+.gnb a .gnb-2:hover{
+    filter: invert(32%) sepia(35%) saturate(2155%) hue-rotate(327deg) brightness(114%) contrast(108%);
+    transition: 0.3s;
+}
+.gnb a .gnb-3:hover{
+    filter: invert(52%) sepia(94%) saturate(376%) hue-rotate(118deg) brightness(97%) contrast(89%);
+    transition: 0.3s;
+}
+.gnb a .gnb-4:hover{
+    filter: invert(76%) sepia(86%) saturate(920%) hue-rotate(355deg) brightness(99%) contrast(91%);
+    transition: 0.3s;
+}
+
+/*######################## welcome section Start ########################*/
+
+.welcome{
+    /* border: 5px solid #000; */
+    height: 90vh;
+    position: relative;
+    padding:0%;
+}
+.welcome-heading{
+    position: absolute;
+    top: 60%;
+    transform: translateY(-25%);
+    transform: translateX(35%);
+    margin: auto;
+    text-align: center;
+    width: 750px;
+    color: #fff;
+}
+.welcome-heading span{
+    font-size: 24px;
+}
+.welcome-heading h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.2em;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.welcome-heading h1 em{
+    display: block;
+    font-style: normal;
+    color: coral;
+}
+.welcome-heading p{
+    padding: 0 100px;
+    margin-bottom: 50px;
+}
+.welcome-btns{
+
+}
+.welcome-btns .btn{
+    /* border: 1px solid #000; */
+    display: inline-block;
+    width: 160px;
+    padding: 8px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+    transition: 0.5s;
+}
+.btn:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+.btn.start{
+    background-color: #0abde3;
+}
+.btn.guide{
+    background-color: #fff;
+    color: #222;
+}
+
+.slideshow img{
+    width: 100%;
+    height: 800px;
+}
