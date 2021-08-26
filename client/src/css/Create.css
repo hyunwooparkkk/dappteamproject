@@ -71,6 +71,11 @@ section{
 footer{display: none;} */
 
 /* Common CSS */
+.create-container{
+    background: url('../images/create-welcome1.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 .headline-share{
     text-align: center;
 }
@@ -122,6 +127,9 @@ header.active{
     background-color: #fff;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.062);
 }
+header.active .create-gnb a{
+    color: black;
+}
 .header-inner{
     width: 1300px; 
     margin: auto;
@@ -129,100 +137,124 @@ header.active{
     padding-top: 30px;
     padding-bottom: 15px;
 }
-.logo{
+.create-logo{
     float: left;
 }
-.logo img{
+.create-logo img{
     margin-top: -7px;
+    color: #fff;
 }
-.gnb{
+.create-gnb{
     float: right;
 }
-.gnb a{
+.create-gnb a{
     margin: 20px;
     font-size: 40px;
+    color: #fff;
 }
-.gnb a .gnb-1:hover{
+.create-gnb a .gnb-1:hover{
     filter: invert(41%) sepia(66%) saturate(518%) hue-rotate(160deg) brightness(95%) contrast(96%);
     transition: 0.3s;
 }
-.gnb a .gnb-2:hover{
+.create-gnb a .gnb-2:hover{
     filter: invert(32%) sepia(35%) saturate(2155%) hue-rotate(327deg) brightness(114%) contrast(108%);
     transition: 0.3s;
 }
-.gnb a .gnb-3:hover{
+.create-gnb a .gnb-3:hover{
     filter: invert(52%) sepia(94%) saturate(376%) hue-rotate(118deg) brightness(97%) contrast(89%);
     transition: 0.3s;
 }
-.gnb a .gnb-4:hover{
+.create-gnb a .gnb-4:hover{
     filter: invert(76%) sepia(86%) saturate(920%) hue-rotate(355deg) brightness(99%) contrast(91%);
     transition: 0.3s;
 }
 
-/*######################## welcome section Start ########################*/
+/*######################## create-welcome section Start ########################*/
 
-.welcome{
+.create-welcome{
     /* border: 5px solid #000; */
     height: 90vh;
     position: relative;
     padding:0%;
 }
-.welcome-heading{
+.create-welcome-heading{
     position: absolute;
-    top: 60%;
-    transform: translateY(-25%);
-    transform: translateX(35%);
+    top: 35%;
+    transform: translateY(-40%);
+    transform: translateX(80%);
     margin: auto;
     text-align: center;
     width: 750px;
     color: #fff;
+    
 }
-.welcome-heading span{
+.create-welcome-heading span{
     font-size: 24px;
 }
-.welcome-heading h1{
+.create-welcome-heading h1{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 60px;
     font-weight: 600;
     line-height: 1.2em;
     margin-bottom: 30px;
     margin-top: 15px;
+    color: rgb(228, 224, 224);
+    animation: flicker  1.3s ease-in-out infinite alternate;
 }
-.welcome-heading h1 em{
+/* neon effect */
+@keyframes flicker {
+    from {
+        text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 10px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+      }
+      to {
+        text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 7px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+      }
+    }
+.create-welcome-heading h1 em{
     display: block;
     font-style: normal;
     color: coral;
 }
-.welcome-heading p{
+.create-welcome-heading p{
     padding: 0 100px;
     margin-bottom: 50px;
 }
-.welcome-btns{
+.create-welcome-upload{
+    cursor: pointer;
+    filter: invert(100%) sepia(0%) saturate(256%) hue-rotate(312deg) brightness(91%) contrast(105%);
 
 }
-.welcome-btns .btn{
-    /* border: 1px solid #000; */
-    display: inline-block;
-    width: 160px;
-    padding: 8px;
-    color: #fff;
+.create-welcome-btns{
+    position: relative;
+}
+.create-welcome-btns button{
     border-radius: 5px;
-    margin: 5px;
-    transition: 0.5s;
+    border: 2px solid #fff;
+    background-color:inherit;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+
 }
-.btn:hover{
+.create-welcome-btns button:hover{
+    cursor: pointer;
+    background-color: crimson;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
 }
-.btn.start{
+.create-btn.start{
     background-color: #0abde3;
 }
-.btn.guide{
+.create-btn.guide{
     background-color: #fff;
     color: #222;
 }
 
-.slideshow img{
+.create-slideshow img{
     width: 100%;
-    height: 800px;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
+
+#create-typing{}

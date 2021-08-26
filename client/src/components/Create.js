@@ -14,6 +14,7 @@ import create from '../css/Create.css';
 import { BiUserCircle , BiWallet } from "react-icons/bi";
 import {FaShopify} from "react-icons/fa";
 import {GoDiffAdded} from "react-icons/go";
+import TypeIt from "typeit-react";
 
 
 
@@ -140,14 +141,14 @@ function Create() {
       });
 
     return (
-        <div className="container">
+        <div className="create-container">
             {/*header start */}
           <header>
             <div className="header-inner">
-              <div className="logo">
+              <div className="create-logo">
                 <Link to="/"><img src="/images/logo1.png"></img></Link>
               </div>
-              <div className='gnb'>
+              <div className='create-gnb'>
                 <Link to="/Create" ><GoDiffAdded className="gnb-1"/></Link>
                 <Link to="/Market" ><FaShopify className="gnb-2"/></Link>
                 <Link to="/Mypage" ><BiUserCircle className="gnb-3"/></Link>
@@ -158,35 +159,18 @@ function Create() {
           </header>
           {/*welcome start */}
 
-          <section className="welcome">
-            <div className="slideshow">
+          <section className="create-welcome">
+          <div className="create-slideshow">
             
-              <img src="/images/create-welcome1.jpg"/>
+              {/* <img src="/images/create-welcome1.jpg"/> */}
              
-            </div>
-            <div className="welcome-heading">
-              <span>
-                당신만의 U1L 한 NFT !! 지금 만들어보세요!
-              </span>
-              <h1>
-                Make Your Own NFT On U1L.
-                <em id="typing"></em>
-              </h1>
-              <p>
-                on the KOREA's largest NFT marketplace
-              </p>
+          </div>
+          <div className="create-welcome-heading">
               
-            </div>
-            
-          </section>
-            {/* <div className="guide-inner" style={{}}>
-            <img src={logo} alt="ipfs-logo" width={70} height={70}/>
-                    <h1>NFT 로 만들 아이템을 업로드 해주세요!</h1>
-                    <br/><br/>
-            </div>
-            
-            <section>
-            <div>
+            <h1>
+              Make Your Own NFT On U1L.
+            </h1>
+            <div className="create-welcome-upload">
             <FilePond ref={test}
                               onupdatefiles={(fileItems) => {
                                   // Set current file objects to sta
@@ -201,21 +185,47 @@ function Create() {
                   
             </FilePond>
             </div>
-            </section> */}
             <div>
+              {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
+            </div>
+            <div className="create-welcome-btns">
+                  <button onClick={handleUpload}>
+                    Upload
+                  </button>
+                  {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
+            <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
+                <div>
+                    <button onClick={handleMint}>
+                        Mint
+                    </button>{' '}
+                    <button href="#" onClick={handleReset}>
+                        Reset
+                    </button>{' '}
+                    <button onClick={gogo}>gogo</button>
+                </div>
+            </div>
+            
+          </div>
+          
+          </section>
+            {/* <div className="guide-inner" style={{}}>
+            <img src={logo} alt="ipfs-logo" width={70} height={70}/>
+                    <h1>NFT 로 만들 아이템을 업로드 해주세요!</h1>
+                    <br/><br/>
+            </div> */}
+            
+          
+            {/* <div>
                     {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
-                </div>
-                <div style={{marginTop:"10px"}}>
-                    <div>
-                      
-                            <button onClick={handleUpload}>
-                                Upload
-                            </button>
-                       
-                    </div>
-                </div>
+                </div> */}
+                {/* <div className="create-welcome-btns">
+                  <button onClick={handleUpload}>
+                    Upload
+                  </button>
+                </div> */}
+                 
                 {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
-                <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
+                {/* <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
                 <div>
                     <button onClick={handleMint}>
                         Mint
@@ -224,7 +234,7 @@ function Create() {
                         Reset
                     </button>
                     <button onClick={gogo}>gogo</button>
-                </div>
+                </div> */}
         </div>
     )
 }

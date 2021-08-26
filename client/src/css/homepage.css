@@ -178,6 +178,7 @@ header.active{
 }
 .welcome-heading span{
     font-size: 24px;
+    color: black;
 }
 .welcome-heading h1{
     font-family: 'Source Sans Pro', sans-serif;
@@ -186,6 +187,7 @@ header.active{
     line-height: 1.2em;
     margin-bottom: 30px;
     margin-top: 15px;
+    color: black;
 }
 .welcome-heading h1 em{
     display: block;
@@ -195,6 +197,7 @@ header.active{
 .welcome-heading p{
     padding: 0 100px;
     margin-bottom: 50px;
+    color: black;
 }
 .welcome-btns{
 

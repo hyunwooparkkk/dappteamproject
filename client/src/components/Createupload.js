@@ -3,6 +3,7 @@ import { useDispatch,useSelector } from "react-redux";
 import {setflag,setmetaname,setmetadesc,setmetahash }from '../modules/upload';
 import { IPFS_URL } from "../utils/constants";
 import ipfs from "../utils/ipfs";
+import createupload from "../css/Createupload.css";
 
 function Createupload({onChangeIpfsMetaHash,upload}) {
     const dispatch = useDispatch();
