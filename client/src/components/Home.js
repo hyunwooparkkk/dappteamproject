@@ -29,7 +29,7 @@ function Home() {
     autoplaySpeed: 2000,
   };
 
-  
+
   $(window).scroll(function(){
     if($(window).scrollTop() > 50){
       $('header , .btn-top').addClass('active')

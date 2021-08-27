@@ -74,7 +74,7 @@ footer{display: none;} */
 .create-container{
     background: url('../images/create-welcome1.jpg') no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 110vh;
 }
 .headline-share{
     text-align: center;
@@ -116,21 +116,21 @@ footer{display: none;} */
     bottom: 20px;
 }
 /*######################## Header Start ########################*/
-header{
+.create-container header{
     position: fixed;
     width: 100%;
     z-index: 10;
     transition: 0.5s;
     
 }
-header.active{
-    background-color: #fff;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.062);
+.create-header.active{
+    background-color: inherit;
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.062); */
 }
-header.active .create-gnb a{
+.create-header.active .create-gnb a{
     color: black;
 }
-.header-inner{
+.create-header-inner{
     width: 1300px; 
     margin: auto;
     overflow: hidden;
@@ -179,14 +179,14 @@ header.active .create-gnb a{
 }
 .create-welcome-heading{
     position: absolute;
-    top: 35%;
+    top: 29%;
     transform: translateY(-40%);
     transform: translateX(80%);
     margin: auto;
     text-align: center;
     width: 750px;
     color: #fff;
-    
+   
 }
 .create-welcome-heading span{
     font-size: 24px;
@@ -221,32 +221,31 @@ header.active .create-gnb a{
 }
 .create-welcome-upload{
     cursor: pointer;
-    filter: invert(100%) sepia(0%) saturate(256%) hue-rotate(312deg) brightness(91%) contrast(105%);
+    
+    /* filter: invert(100%) sepia(0%) saturate(256%) hue-rotate(312deg) brightness(91%) contrast(105%); */
 
 }
 .create-welcome-btns{
     position: relative;
+    display: block;
+    font-family: 'NEXON Lv2 Gothic';
+
 }
 .create-welcome-btns button{
     border-radius: 5px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     background-color:inherit;
     color: #fff;
     font-size: 16px;
-    font-weight: 600;
-
+    font-weight: 500;
+    margin-right:10px;
+    padding: 5px 10px;
 }
 .create-welcome-btns button:hover{
+    transition: .3s;
     cursor: pointer;
-    background-color: crimson;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-.create-btn.start{
-    background-color: #0abde3;
-}
-.create-btn.guide{
-    background-color: #fff;
-    color: #222;
+    background-color: #22b5c0;
+    box-shadow: 0 0 12px 0px rgba(255, 255, 255, 0.568);
 }
 
 .create-slideshow img{
@@ -257,4 +256,9 @@ header.active .create-gnb a{
     overflow: hidden;
 }
 
+.create-welcome-upload .filepond--root .filepond--drop-label{
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+}
 #create-typing{}

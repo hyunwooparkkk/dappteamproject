@@ -18,6 +18,7 @@ import TypeIt from "typeit-react";
 
 
 
+
 // import '../css/bootstrap/css/bootstrap.min.css';
 import Createupload from './Createupload';
 import {setpond,setfiles,setbuffer,setipfsMetaHash,setipfsHash,uploadreset} from '../modules/upload'
@@ -122,31 +123,31 @@ function Create() {
         console.log(dodo,"adw");
     }
 
-    $(window).scroll(function(){
-        if($(window).scrollTop() > 50){
-          $('header , .btn-top').addClass('active')
-        }
-        else{
-          $('header , .btn-top').removeClass('active')
-        }
-      })
-      // Header Trigger
-      $('.trigger').click(function(){
-        $(this).toggleClass('active');
-        $('.gnb').togleClass('active');
-      });
+    // $(window).scroll(function(){
+    //     if($(window).scrollTop() > 50){
+    //       $('header , .btn-top').addClass('active')
+    //     }
+    //     else{
+    //       $('header , .btn-top').removeClass('active')
+    //     }
+    //   })
+    //   // Header Trigger
+    //   $('.trigger').click(function(){
+    //     $(this).toggleClass('active');
+    //     $('.gnb').togleClass('active');
+    //   });
     
-      $('.gnb a, section').click(function(){
-        $('.gnb , .trigger').removeClass('active');
-      });
+    //   $('.gnb a, section').click(function(){
+    //     $('.gnb , .trigger').removeClass('active');
+    //   });
 
     return (
         <div className="create-container">
             {/*header start */}
           <header>
-            <div className="header-inner">
+            <div className="create-header-inner">
               <div className="create-logo">
-                <Link to="/"><img src="/images/logo1.png"></img></Link>
+                <Link to="/"><img src="/images/logo-white.png"></img></Link>
               </div>
               <div className='create-gnb'>
                 <Link to="/Create" ><GoDiffAdded className="gnb-1"/></Link>
@@ -155,11 +156,10 @@ function Create() {
                 <Link to="/Signin" ><BiWallet className="gnb-4"/></Link>
               </div>
             </div>
-            <div className="trigger"></div>
           </header>
           {/*welcome start */}
 
-          <section className="create-welcome">
+        <section className="create-welcome">
           <div className="create-slideshow">
             
               {/* <img src="/images/create-welcome1.jpg"/> */}
@@ -189,25 +189,21 @@ function Create() {
               {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
             </div>
             <div className="create-welcome-btns">
-                  <button onClick={handleUpload}>
-                    Upload
-                  </button>
                   {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
             <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
-                <div>
-                    <button onClick={handleMint}>
-                        Mint
-                    </button>{' '}
-                    <button href="#" onClick={handleReset}>
-                        Reset
-                    </button>{' '}
+                <div >
+                  <button  onClick={handleUpload}>Upload</button>
+                    <button onClick={handleMint}>Mint</button>
+                    <button href="#" onClick={handleReset}>Reset</button>
                     <button onClick={gogo}>gogo</button>
                 </div>
             </div>
-            
           </div>
+        </section>
+                    
+                    
+            
           
-          </section>
             {/* <div className="guide-inner" style={{}}>
             <img src={logo} alt="ipfs-logo" width={70} height={70}/>
                     <h1>NFT 로 만들 아이템을 업로드 해주세요!</h1>
