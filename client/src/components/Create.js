@@ -63,9 +63,7 @@ function Create() {
 
 
     const handleUpload = async () => {
-
         if (upload.files.length > 0) {
-            
             dispatch(setipfsHash('Uploading...'));
             console.log("할거지",upload.buffer);
             await ipfs.add(upload.buffer, (err, ipfsHash) => {
