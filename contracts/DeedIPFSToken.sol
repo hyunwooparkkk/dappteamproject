@@ -18,13 +18,35 @@ contract DeedIPFSToken is ERC721, ERC165 {
     mapping(uint256 => address) allowance;
     mapping(address => mapping(address => bool)) operators;
 
+    //지금까지발행했던 NFT의 메타데이터가 다 들어가있다. 
     mapping(uint256 => string) tokenURIs;
+
+      //나의nft를 저장하기 위한 매핑 
+    // mapping(uint256 => mapping(string => address)) MyNFT; 
+    //전부다 ( 모든 주소를 저장해서 나중에 모든nft를 불러올수있도록.)
+    // mapping(uint => allCreate)AllNfts;  
+        //나의nft를 저장하기 위한 매핑 
+    mapping(uint256 => mapping(string => address)) MyNFT; 
+    //전부다 ( 모든 주소를 저장해서 나중에 모든nft를 불러올수있도록.)
+    // mapping(uint256 => address)AllNfts;  
+
+
 
     struct asset {
         string ipfsHash;
     }
+     //struct 생성
+    struct allNFT{
+        uint256 tokenId; //토큰 아이디
+        string ipfsHash; //사진 업로드할 때 필요한 해시값
+        address tokenOwner; //토큰 아이디에 해당하는 토큰 소유자
+    }
 
-    asset[] public allTokens;
+    //struct => 배열 선언
+    allNFT[] allNFTs;
+
+    asset[] public allTokens;// 자신이발행한 토큰갯수확인 
+
 
     //for enumeration
     uint256[] public allValidTokenIds; //same as allTokens but does't have invalid tokens
@@ -61,37 +83,32 @@ contract DeedIPFSToken is ERC721, ERC165 {
         return addr_owner;
     }
 
+    /////////////////////////////보내기/////////////////////////////////////
     function transferFrom(
         address _from,
         address _to,
         uint256 _tokenId
     ) public payable {
         address addr_owner = ownerOf(_tokenId);
-
         require(addr_owner == _from, "_from is NOT the owner of the token");
-
         require(_to != address(0), "Transfer _to address 0x0");
-
         address addr_allowed = allowance[_tokenId];
         bool isOp = operators[addr_owner][msg.sender];
-
         require(
             addr_owner == msg.sender || addr_allowed == msg.sender || isOp,
             "msg.sender does not have transferable token"
         );
-
         //transfer : change the owner of the token
         tokenOwners[_tokenId] = _to;
         balances[_from] = balances[_from].sub(1);
         balances[_to] = balances[_to].add(1);
-
         //reset approved address
         if (allowance[_tokenId] != address(0)) {
             delete allowance[_tokenId];
         }
-
         emit Transfer(_from, _to, _tokenId);
     }
+    //////////////////////////////////////////////////////////////////
 
     function safeTransferFrom(
         address _from,
@@ -166,21 +183,34 @@ contract DeedIPFSToken is ERC721, ERC165 {
     function mint(string calldata ipfsHash) external {
         asset memory newAsset = asset(ipfsHash);
         uint256 tokenId = allTokens.push(newAsset) - 1;
-        //token id starts from 0, index of assets array
+        //tokenid starts from 0, index of assets array
         tokenOwners[tokenId] = msg.sender;
         balances[msg.sender] = balances[msg.sender].add(1);
-
         //for enumeration
         allValidTokenIndex[tokenId] = allValidTokenIds.length;
         //index starts from 0
         allValidTokenIds.push(tokenId);
-
+        // MyNFT[tokenURIs[tokenId]] = msg.sender;
+        //mapping(uint256 => mapping(string => address)) MyNFT;
+        //   //배열에 값 저장
+        allNFTs.push(allNFT(tokenId, ipfsHash, msg.sender ));
         //Token Metadata
         //tokenURIs[tokenId] = Strings.strConcat(baseTokenURI(), "QmdDW36bvr2W6ua4FxnT8bKysXhYEUo7QbLTbkGW4Foxr8");
         tokenURIs[tokenId] = Strings.strConcat(baseTokenURI(), ipfsHash);
-
+        // allAddresses.push(tokenURIs[0]);
+        // allAddresses.push(msg.sender); // allAddresses에 nft발행한 애 넣기 
         emit Transfer(address(0), msg.sender, tokenId);
     }
+
+    function getLength() public view returns (uint256) {
+        return allNFTs.length;
+    }
+
+    
+    function getAllNFTs(uint _number) public view returns (uint256, string memory, address){
+        return (allNFTs[_number].tokenId, allNFTs[_number].ipfsHash, allNFTs[_number].tokenOwner);
+    }
+    
 
     function burn(uint256 _tokenId) external {
         address addr_owner = ownerOf(_tokenId);

@@ -8,43 +8,45 @@ import { useDispatch,useSelector } from "react-redux";
 import '../css/filepond-custom.css';
 import '../App.css';
 import ipfs from '../utils/ipfs';
+import axios from 'axios';
+
+import moment from 'moment';
+import 'moment/locale/ko';
+
 
 // import '../css/bootstrap/css/bootstrap.min.css';
 import Createupload from './Createupload';
 import {setpond,setfiles,setbuffer,setipfsMetaHash,setipfsHash,uploadreset} from '../modules/upload'
 
-
 registerPlugin(FilePondPluginImagePreview);
+
 function Create() {
     const dispatch = useDispatch();
     const upload = useSelector(state => state.upload);
     const conn = useSelector(state => state.conn);
     const test = useRef();
-    const [sta,setsta]=useState({
-        ipfsHash: null,
-        ipfsMetaHash: null,
-        buffer: '',
-        imageUrl: null,
-        flag: false,
-    });
+
+    // const [sta,setsta]=useState({
+    //     ipfsHash: null,
+    //     ipfsMetaHash: null,
+    //     buffer: '',
+    //     imageUrl: null,
+    //     flag: false,
+    // });
 
     useEffect(() => {
-       
         document.addEventListener("FilePond:addfile", readFile);
-        console.log("adwd")
-        
+        console.log("파일읽기",readFile);
     }, [])
 
 
     const readFile = () => {
        console.log(test.current.props)
-      
         if (test.current != null) {
             console.log("여기여기")
             const file = test.current.props.children[0].props.src; // single file
-
             let reader = new window.FileReader();
-            console.log("ddd",reader);
+            console.log("파일읽기2",reader);
             reader.readAsArrayBuffer(file);
             reader.onloadend = () => fileToBuffer(reader);
         }
@@ -60,7 +62,6 @@ function Create() {
         dispatch(setbuffer(buffer));
 
     }
-
 
     const handleUpload = async () => {
         if (upload.files.length > 0) {
@@ -82,13 +83,25 @@ function Create() {
         if (upload.ipfsMetaHash !== null) {
             await conn.shopInstance.mint(upload.ipfsMetaHash,{
                 from: conn.myAccount,
-                // gas: 90000
-
-
             });
+            console.log('민트할때나오는거',conn.shopInstance.mint)
 
-            //여기해야함
-            // sta.deedIpfsToken.methods.mint.cacheSend(sta.ipfsMetaHash);
+            // const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
+            // console.log(nowTime);
+            //NftCount ++
+        }
+    }
+
+    const handleGet = async() => {
+        /*
+         * 배열 가져오기 
+         * getAllNFTs
+         */
+        const length = await conn.shopInstance.getLength();
+        console.log(length);
+        for(let i = 0; i < length; i++){
+            const test = await conn.shopInstance.getAllNFTs(i);
+            console.log(test, i, '`i`번nft해쉬가져오기');
         }
     }
 
@@ -98,7 +111,6 @@ function Create() {
             imageUrl: null,
             flag: false
         }));
-        
         test.current.removeFile();
     }
 
@@ -106,10 +118,15 @@ function Create() {
         dispatch(setipfsMetaHash(ipfsMetaHash));
     }
     
-    const gogo=async()=>{
-        const dodo=await ipfs.get('QmYqKKobNRC2gzqnkJAp11s18jdMuiboZ9U4ZbH9bmX7aE')
-        console.log(dodo,"adw");
-    }
+//     const handleRead = async()=>{
+//         const handleRead = await conn.shopInstance.readAllAddresses();
+//         console.log(handleRead, '주소나왕!!!');
+//     }
+//     const dd="QmehFe5ghQnsdoFepxpzG5sAFLtneGYrjmM3mNyLygnr9B";
+//    const handlemetahash=async()=>{
+//     const dododo=  await axios.get( "https://gateway.ipfs.io/ipfs/QmehFe5ghQnsdoFepxpzG5sAFLtneGYrjmM3mNyLygnr9B");
+//     console.log("sibal",dododo);    
+//     }
 
     return (
         <div className="container">
@@ -146,15 +163,20 @@ function Create() {
                     </div>
                 </div>
                 {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
-                <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
+                <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload} conn={conn}/>
                 <div>
                     <button onClick={handleMint}>
                         Mint
-                    </button>{' '}
+                    </button> 
                     <button href="#" onClick={handleReset}>
                         Reset
                     </button>
-                    <button onClick={gogo}>gogo</button>
+                
+                    <button onClick={handleGet}>콘솔에 발행한 NFT목록</button>
+                    {/* <button onClick={handleRead}> 주소나왕!!</button>
+                    <button onClick={handlemetahash}>메타나와! </button> */}
+
+
                 </div>
         </div>
     )
