@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import Create from './components/Create';
-import Home from './components/Home';
+import Home from './container/Home';
 import Signin from './components/Signin';
 import WOW from 'wowjs';
 import Slider from "react-slick";
