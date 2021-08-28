@@ -5,6 +5,9 @@ import { IPFS_URL } from "../utils/constants";
 import ipfs from "../utils/ipfs";
 import moment from 'moment';
 import 'moment/locale/ko';
+import createupload from "../css/Createupload.css";
+import $ from 'jquery';
+
 
 
 function Createupload({onChangeIpfsMetaHash,upload,conn}) {
@@ -22,6 +25,7 @@ function Createupload({onChangeIpfsMetaHash,upload,conn}) {
         const price= upload.metaprice;
         const typeprice= upload.metatypeprice;
 
+       
         if (name !== '' && desc !== '' && hash !== '') {
             dispatch(setflag(true));
 
@@ -50,22 +54,12 @@ function Createupload({onChangeIpfsMetaHash,upload,conn}) {
     }
 
     return (
-        <div style={{marginTop: '10px'}}>
-                <div>
-                    <div >
-                        Name
-                    </div>
-                    <div >
-                        <input type="text" id="metaName" value={upload.metaName} onChange={(e)=>{dispatch(setmetaname(e.target.value))}} placeholder={"이름을 입력하세요"}/>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        Description
-                    </div>
-                    <div >
-                        <input type="text" id="metaDesc" value={upload.metaDesc} onChange={(e)=>{dispatch(setmetadesc(e.target.value))}} placeholder={"설명을 입력하세요"} />
-                    </div>
+        <div className="create-welcome-upload-wrapper">
+            <div className="create-welcome-upload-inner">
+                <div className="create-welcome-upload-inner-left">
+                    <p>Item Name</p>
+                    <p>Image hash</p>
+                    <p>Description</p>
                 </div>
                 <div>
                     <div>
@@ -94,7 +88,13 @@ function Createupload({onChangeIpfsMetaHash,upload,conn}) {
                 
            
         
+                <div className="create-welcome-upload-inner-right">
+                    <p><input type="text" id="metaName" value={upload.metaName} onChange={(e)=>{dispatch(setmetaname(e.target.value))}} placeholder={"이름을 입력하세요"}/></p>
+                    <p><input type="text" id="metaHash" value={upload.metaHash} onChange={(e)=>{dispatch(setmetahash(e.target.value))}} placeholder={"위에서 나온 해쉬값을 입력하세요"}/></p>
+                    <p><input type="text" id="metaDesc" value={upload.metaDesc} onChange={(e)=>{dispatch(setmetadesc(e.target.value))}} placeholder={"설명을 입력하세요"} /></p>
 
+                </div>
+            </div>    
             <div>
                 <div>
                     <button  onClick={handleUploadJson}>
@@ -102,14 +102,18 @@ function Createupload({onChangeIpfsMetaHash,upload,conn}) {
                     </button>
                 </div>
             </div>
-
-
             <div style={{marginTop: '10px', marginBottom: '10px'}}>
                 {(upload.flag)
                     ?<div>-로딩중-</div>
                     :upload.ipfsMetaHash
                 }
             </div>
+                   
+                
+        
+
+
+
         </div>
     )
 }
