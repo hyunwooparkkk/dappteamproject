@@ -3,6 +3,9 @@ import { useDispatch,useSelector } from "react-redux";
 import {setflag,setmetaname,setmetadesc,setmetahash }from '../modules/upload';
 import { IPFS_URL } from "../utils/constants";
 import ipfs from "../utils/ipfs";
+import createupload from "../css/Createupload.css";
+import $ from 'jquery';
+
 
 function Createupload({onChangeIpfsMetaHash,upload}) {
     const dispatch = useDispatch();
@@ -12,7 +15,7 @@ function Createupload({onChangeIpfsMetaHash,upload}) {
         const name = upload.metaName;
         const desc = upload.metaDesc;
         const hash = upload.metaHash;
-     
+       
         if (name !== '' && desc !== '' && hash !== '') {
             dispatch(setflag(true));
 
@@ -32,34 +35,20 @@ function Createupload({onChangeIpfsMetaHash,upload}) {
     }
 
     return (
-        <div style={{marginTop: '10px'}}>
-                <div>
-                    <div >
-                        Name
-                    </div>
-                    <div >
-                        <input type="text" id="metaName" value={upload.metaName} onChange={(e)=>{dispatch(setmetaname(e.target.value))}} placeholder={"이름을 입력하세요"}/>
-                    </div>
+        <div className="create-welcome-upload-wrapper">
+            <div className="create-welcome-upload-inner">
+                <div className="create-welcome-upload-inner-left">
+                    <p>Item Name</p>
+                    <p>Image hash</p>
+                    <p>Description</p>
                 </div>
-                <div>
-                    <div>
-                        Description
-                    </div>
-                    <div >
-                        <input type="text" id="metaDesc" value={upload.metaDesc} onChange={(e)=>{dispatch(setmetadesc(e.target.value))}} placeholder={"설명을 입력하세요"} />
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        Image hash
-                    </div>
-                    <div >
-                        <input type="text" id="metaHash" value={upload.metaHash} onChange={(e)=>{dispatch(setmetahash(e.target.value))}} placeholder={"위에서 나온 해쉬값을 입력하세요"}/>
-                    </div>
-                </div>
-     
-        
+                <div className="create-welcome-upload-inner-right">
+                    <p><input type="text" id="metaName" value={upload.metaName} onChange={(e)=>{dispatch(setmetaname(e.target.value))}} placeholder={"이름을 입력하세요"}/></p>
+                    <p><input type="text" id="metaHash" value={upload.metaHash} onChange={(e)=>{dispatch(setmetahash(e.target.value))}} placeholder={"위에서 나온 해쉬값을 입력하세요"}/></p>
+                    <p><input type="text" id="metaDesc" value={upload.metaDesc} onChange={(e)=>{dispatch(setmetadesc(e.target.value))}} placeholder={"설명을 입력하세요"} /></p>
 
+                </div>
+            </div>    
             <div>
                 <div>
                     <button  onClick={handleUploadJson}>
@@ -67,8 +56,6 @@ function Createupload({onChangeIpfsMetaHash,upload}) {
                     </button>
                 </div>
             </div>
-
-
             <div style={{marginTop: '10px', marginBottom: '10px'}}>
                 {(upload.flag)
                     ?<div>-로딩중-</div>

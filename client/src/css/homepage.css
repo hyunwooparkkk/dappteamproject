@@ -111,14 +111,14 @@ footer{display: none;} */
     bottom: 20px;
 }
 /*######################## Header Start ########################*/
-header{
+.header{
     position: fixed;
     width: 100%;
     z-index: 10;
     transition: 0.5s;
     
 }
-header.active{
+.container .header.active{
     background-color: #fff;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.062);
 }
@@ -142,7 +142,19 @@ header.active{
     margin: 20px;
     font-size: 40px;
 }
-.gnb a:hover{
+.gnb a .gnb-1:hover{
+    filter: invert(41%) sepia(66%) saturate(518%) hue-rotate(160deg) brightness(95%) contrast(96%);
+    transition: 0.3s;
+}
+.gnb a .gnb-2:hover{
+    filter: invert(32%) sepia(35%) saturate(2155%) hue-rotate(327deg) brightness(114%) contrast(108%);
+    transition: 0.3s;
+}
+.gnb a .gnb-3:hover{
+    filter: invert(52%) sepia(94%) saturate(376%) hue-rotate(118deg) brightness(97%) contrast(89%);
+    transition: 0.3s;
+}
+.gnb a .gnb-4:hover{
     filter: invert(76%) sepia(86%) saturate(920%) hue-rotate(355deg) brightness(99%) contrast(91%);
     transition: 0.3s;
 }
@@ -166,6 +178,7 @@ header.active{
 }
 .welcome-heading span{
     font-size: 24px;
+    color: black;
 }
 .welcome-heading h1{
     font-family: 'Source Sans Pro', sans-serif;
@@ -174,6 +187,7 @@ header.active{
     line-height: 1.2em;
     margin-bottom: 30px;
     margin-top: 15px;
+    color: black;
 }
 .welcome-heading h1 em{
     display: block;
@@ -183,6 +197,7 @@ header.active{
 .welcome-heading p{
     padding: 0 100px;
     margin-bottom: 50px;
+    color: black;
 }
 .welcome-btns{
 
@@ -907,7 +922,7 @@ input[id=tab3]:checked ~ .tab-btn label[for=tab3] span{
 }
 
 /* ############# section : footer ############### */
- footer{
+ .footer{
     background-color: #130f40;
     color: #bdbdbd;
     font-size: 14px;

@@ -8,7 +8,9 @@ import HomePage from "../css/homepage.css";
 import { BiUserCircle , BiWallet } from "react-icons/bi";
 import {FaShopify} from "react-icons/fa";
 import {GoDiffAdded} from "react-icons/go";
-// import Custom from "../utils/custom"
+import Responsive from "../css/responsive.css";
+
+import Header from '../components/Header';
 
 function Home() {
   var settings = {
@@ -27,26 +29,6 @@ function Home() {
     autoplay: true,
     autoplaySpeed: 2000,
   };
-
-  
-  $(window).scroll(function(){
-    if($(window).scrollTop() > 50){
-      $('header , .btn-top').addClass('active')
-    }
-    else{
-      $('header , .btn-top').removeClass('active')
-    }
-  })
-  // Header Trigger
-  $('.trigger').click(function(){
-    $(this).toggleClass('active');
-    $('.gnb').togleClass('active');
-  });
-
-  $('.gnb a, section').click(function(){
-    $('.gnb , .trigger').removeClass('active');
-  })
-  
   
   // Faq Accordion
   $('.faq-desc').eq(0).show();
@@ -60,23 +42,7 @@ function Home() {
     return (
       
         <div className="container">
-          
-          {/*header start */}
-          <header>
-            <div className="header-inner">
-              <div className="logo">
-                <Link to="/"><img src="/images/logo1.png"></img></Link>
-              </div>
-              <div className='gnb'>
-                <Link to="/Create" ><GoDiffAdded/></Link>
-                <Link to="/Market" ><FaShopify/></Link>
-                <Link to="/Mypage" ><BiUserCircle/></Link>
-                <Link to="/Signin" ><BiWallet/></Link>
-              </div>
-            </div>
-            <div className="trigger"></div>
-          </header>
-
+          <Header/>
           {/*welcome start */}
 
           <section className="welcome">
@@ -95,7 +61,7 @@ function Home() {
               <h1>
                 An idea solution of startup for your
                 {/* <em id="typing"></em> */}
-                <em id="typing"><TypeIt element={"h1"}
+                <em id="typing"><TypeIt
                   options={{
                     strings: ["Business strategy.", "Innovation Plan.", "Creative Idea."], // 타이핑 텍스트 입력
                     speed: 100, // 알파벳 타이핑 속도
@@ -439,8 +405,6 @@ function Home() {
                 </div>
             </div>
         </footer>
-        {/* // <!-- Go to Top --> */}
-        <a href="#" className="btn-top"><i className="xi-angle-up-thin"></i></a>
     </div>
 
     )

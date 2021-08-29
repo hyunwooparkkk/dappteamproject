@@ -1,0 +1,55 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*XEIcon 2.3.3 CDN*/
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* Web Fonts - Source Sans Pro */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+/* font-family: 'Source Sans Pro', sans-serif; */
+
+/* Noonnu Fonts = NEXON Lv2 Godic - Regular */
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.create-welcome-upload-wrapper{
+    font-family: 'NEXON Lv2 Gothic';
+}
+.create-welcome-upload-inner{
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+.create-welcome-upload-inner-left{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    float: left;
+    width: 50%;
+    /* transform: translateX(-10%); */
+}
+.create-welcome-upload-inner-right{
+    position: absolute;
+    top:3px;
+    left: 0;
+
+    transform: translateX(40%);
+    width: 50%;
+}
+.create-welcome-upload-inner-right input:focus{
+    outline-style: none;
+    
+}
+.create-welcome-upload-inner-right input[type="text"]{
+    width: 370px;
+    line-height: 20px;
+    border-bottom: #fbfbfb;
+    outline: none;
+    font-family: 'NEXON Lv2 Gothic';
+    
+    
+}
