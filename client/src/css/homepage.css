@@ -859,18 +859,23 @@ input[id=tab3]:checked ~ .tab-btn label[for=tab3] span{
 .news-thum p {
     margin-top: 0;
 }
+
 .news-thum .date{
     float: right;
 }
+
 .news-photo{
     /* border: 2px solid blue; */
     display: inline-block;
     position: relative;
     overflow: hidden;
 }
+
 .news-photo img{
     display: block;
     transition: .5s;
+    height: 160px;
+    width: 280px;
 }
 
 .btn-readmore{
@@ -885,6 +890,7 @@ input[id=tab3]:checked ~ .tab-btn label[for=tab3] span{
     border-radius: 20px;
     margin: auto;
 }
+
 .badge{
     position: absolute;
     color: #fff;

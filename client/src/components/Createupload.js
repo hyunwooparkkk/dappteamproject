@@ -57,6 +57,7 @@ function Createupload({onChangeIpfsMetaHash,upload}) {
                         <input type="text" id="metaHash" value={upload.metaHash} onChange={(e)=>{dispatch(setmetahash(e.target.value))}} placeholder={"위에서 나온 해쉬값을 입력하세요"}/>
                     </div>
                 </div>
+     
         
 
             <div>

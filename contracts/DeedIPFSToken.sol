@@ -25,6 +25,7 @@ contract DeedIPFSToken is ERC721, ERC165 {
     }
 
     asset[] public allTokens;
+    
 
     //for enumeration
     uint256[] public allValidTokenIds; //same as allTokens but does't have invalid tokens
@@ -169,16 +170,13 @@ contract DeedIPFSToken is ERC721, ERC165 {
         //token id starts from 0, index of assets array
         tokenOwners[tokenId] = msg.sender;
         balances[msg.sender] = balances[msg.sender].add(1);
-
         //for enumeration
         allValidTokenIndex[tokenId] = allValidTokenIds.length;
         //index starts from 0
         allValidTokenIds.push(tokenId);
-
         //Token Metadata
         //tokenURIs[tokenId] = Strings.strConcat(baseTokenURI(), "QmdDW36bvr2W6ua4FxnT8bKysXhYEUo7QbLTbkGW4Foxr8");
         tokenURIs[tokenId] = Strings.strConcat(baseTokenURI(), ipfsHash);
-
         emit Transfer(address(0), msg.sender, tokenId);
     }
 
