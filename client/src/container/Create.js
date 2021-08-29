@@ -16,11 +16,8 @@ import {FaShopify} from "react-icons/fa";
 import {GoDiffAdded} from "react-icons/go";
 import TypeIt from "typeit-react";
 
-
-
-
 // import '../css/bootstrap/css/bootstrap.min.css';
-import Createupload from './Createupload';
+import Createupload from '../components/Createupload';
 import {setpond,setfiles,setbuffer,setipfsMetaHash,setipfsHash,uploadreset} from '../modules/upload'
 
 
