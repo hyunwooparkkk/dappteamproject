@@ -197,7 +197,7 @@ function Create() {
                   <button  onClick={handleUpload}>Upload</button>
                     <button onClick={handleMint}>Mint</button>
                     <button href="#" onClick={handleReset}>Reset</button>
-                    <button onClick={gogo}>gogo</button>
+                 
                 </div>
             </div>
           </div>
@@ -221,8 +221,8 @@ function Create() {
                 </div> */}
                  
                 {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
-                <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload} conn={conn}/>
-                {/* <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
+                {/* <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload} conn={conn}/>
+                <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
                 <div>
                     <button onClick={handleMint}>
                         Mint
@@ -232,15 +232,11 @@ function Create() {
                     </button>
                 
                     <button onClick={handleGet}>콘솔에 발행한 NFT목록</button>
-                    {/* <button onClick={handleRead}> 주소나왕!!</button>
-                    <button onClick={handlemetahash}>메타나와! </button> */}
-
-
-                </div>
-                    <button onClick={gogo}>gogo</button>
-                </div> 
+                </div> */}
+              
+            </div>
+        </div>
         )
-      
 }
 
 export default Create

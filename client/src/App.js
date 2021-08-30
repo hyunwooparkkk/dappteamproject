@@ -7,7 +7,6 @@ import Market from './components/Market';
 import Signin from './components/Signin';
 import Product from './components/Product';
 import Home from './container/Home';
-import Signin from './components/Signin';
 import WOW from 'wowjs';
 import Slider from "react-slick";
 
