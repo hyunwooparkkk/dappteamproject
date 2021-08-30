@@ -1,13 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import $ from 'jquery';
-import Slider from "react-slick";
-import WOW from 'wowjs';
-import TypeIt from "typeit-react";
-import HomePage from "../css/homepage.css";
-import { BiUserCircle , BiWallet } from "react-icons/bi";
-import {FaShopify} from "react-icons/fa";
-import {GoDiffAdded} from "react-icons/go";
 import {BsFillCollectionFill, BsHeartFill,BsPencilSquare} from "react-icons/bs"
 import {GiMagicLamp} from "react-icons/gi"
 

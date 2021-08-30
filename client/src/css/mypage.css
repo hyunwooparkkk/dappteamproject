@@ -148,6 +148,8 @@ section{
     /* height: 50vh; */
     box-sizing: border-box;
     border: 1px solid #d1d1d1;
+    border-top: none;
+    border-right: none;
 }
 .profile-left-title{
     text-align: left;
@@ -162,6 +164,7 @@ section{
 }
 .categories{
     list-style: none;
+
     
 }
 .categories li{
