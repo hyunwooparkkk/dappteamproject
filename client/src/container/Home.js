@@ -30,26 +30,6 @@ function Home() {
     autoplay: true,
     autoplaySpeed: 2000,
   };
-
-
-//   $(window).scroll(function(){
-//     if($(window).scrollTop() > 50){
-//       $('header , .btn-top').addClass('active')
-//     }
-//     else{
-//       $('header , .btn-top').removeClass('active')
-//     }
-//   })
-//   // Header Trigger
-//   $('.trigger').click(function(){
-//     $(this).toggleClass('active');
-//     $('.gnb').togleClass('active');
-//   });
-
-//   $('.gnb a, section').click(function(){
-//     $('.gnb , .trigger').removeClass('active');
-//   })
-  
   
   // Faq Accordion
   $('.faq-desc').eq(0).show();
@@ -64,9 +44,9 @@ function Home() {
       
         <div className="container">
           <Header/>
-          {/*welcome start */}
+        {/*welcome start */}
 
-          <section className="welcome">
+        <section className="welcome">
             <div className="slideshow">
               <Slider {...settings}>
 
@@ -104,7 +84,7 @@ function Home() {
             </div>
           </section>
 
-          {/*ceo-access start */}
+        {/*ceo-access start */}
           <section className="ceo-access" id="feature1">
             <div className="ceo-inner">
                 <div className="ceo-content">
@@ -142,7 +122,6 @@ function Home() {
                 </div>
             </div>
         </section>
-        
         {/* <!-- banner Start --> */}
         <section className="banner">
             <div className="banner-inner">
@@ -241,9 +220,7 @@ function Home() {
             </div>
             
         </section>   
-
         {/* <!-- review Start --> */}
-
         <section className="review">
       <div className="review-inner">
         <div className="headline-share">

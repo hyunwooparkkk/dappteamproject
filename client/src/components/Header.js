@@ -41,7 +41,7 @@ function Header() {
                 <Link to="/Signin" ><BiWallet className="gnb-4"/></Link>
               </div>
             </div>
-            <div className="trigger"></div>
+            {/* <div className="trigger"></div> */}
           
 
        
