@@ -1,10 +1,11 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import { useDispatch,useSelector } from "react-redux";
 import {spushdata,resetdata} from "../modules/marketdata"
 import ipfs from '../utils/ipfs';
 import List from './List';
 function Market() {
-    
+    const [change,setchange]=useState(0);
+    const [search,setsearch]=useState("");
     const dispatch=useDispatch();
     const conn = useSelector(state => state.conn);
     const data = useSelector(state => state.marketdata);
@@ -27,8 +28,15 @@ function Market() {
     return (
         <div>
             <div>-markgetpage-</div>
-
-         <List data={data}></List>
+            <input type="text" placeholder="작품명" value={search} onChange={(e)=>{setsearch(e.target.value)}}></input>
+            <button onClick={()=>{setchange(4)}}>검색</button>
+            <div>
+            <button onClick={()=>{setchange(0)}}>최신순</button>
+            <button onClick={()=>{setchange(1)}}>과거순</button>
+            <button onClick={()=>{setchange(2)}}>지정가</button>
+            <button onClick={()=>{setchange(3)}}>경쟁가만</button>
+            </div>
+         <List data={data} change={change} search={search} setchange={setchange}></List>
         </div>
     )
 }

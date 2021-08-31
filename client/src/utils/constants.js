@@ -1,4 +1,4 @@
-const IPFS_URL = "https://gateway.ipfs.io/ipfs/";
+const IPFS_URL =  "https://ipfs.infura.io/ipfs/";;
 
 export {
     IPFS_URL

@@ -29,8 +29,11 @@ function Product() {
     const onhandlebid =async(bidprice,initprice)=>{
         if(initprice>=bidprice){
             alert("입찰시작가보다 더높게 적으세요!");
+        }else{
+            await console.log("입찰가격",bidprice)
+            
+
         }
-        await console.log("입찰함수")
     }
 
     return (
@@ -40,23 +43,25 @@ function Product() {
                 data.data.map((x)=>x.num==compnum?
                 <div>
                 <img src={x.image} width="300px" height="300px"></img>
-                <div>-{x.name}-</div>
-                <div> {x.description}</div>
+                <div>-작품명: {x.name}-</div>
+                <div>설명: {x.description}</div>
          
                 {
                     x.typeprice==false? 
                     <div>    
                     <div>지정가:{x.price}</div>
-                    <div> {x.time}</div>
-                    <div> {x.user}</div><button onClick={()=>{onhandlebuy(x.price,x.user,x.num)}}>구매하기</button>
+                    <div>발행날짜: {x.time}</div>
+                    <div>창작자: {x.user}</div><button onClick={()=>{onhandlebuy(x.price,x.user,x.num)}}>구매하기</button>
                     </div>
                     :<div>
-                    <div>입찰가:{x.price}</div>
-                    <div> {x.time}</div>
-                    <div> {x.user}</div>
-                        <input type="text" placeholder={x.price} value={bidprice} onChange={(e)=>{setbidprice(e.target.value)}}></input><button onClick={()=>{onhandlebid(bidprice,x.price)}}>입찰하기</button></div>
+                    <div>입찰가: {x.price}</div>
+                    <div>발행날짜: {x.time }</div>
+                    <div>종료시간: {x.endDate}</div>
+                    <div>창작자: {x.user}</div>
+                    <input type="text" placeholder={x.price} value={bidprice} onChange={(e)=>{setbidprice(e.target.value)}}></input>
+                    <button onClick={()=>{onhandlebid(bidprice,x.price)}}>입찰하기</button>
+                    </div>
                 }
-               
                 </div>
                 :null)
             }

@@ -6,18 +6,12 @@ import 'filepond/dist/filepond.min.css';
 import logo from '../images/ipfs-logo.png';
 import { useDispatch,useSelector } from "react-redux";
 import '../css/filepond-custom.css';
-// import '../App.css';
+import '../App.css';
 import ipfs from '../utils/ipfs';
 import axios from 'axios';
+
 import moment from 'moment';
 import 'moment/locale/ko';
-import $ from 'jquery';
-import { Link } from 'react-router-dom';
-import create from '../css/Create.css';
-import { BiUserCircle , BiWallet } from "react-icons/bi";
-import {FaShopify} from "react-icons/fa";
-import {GoDiffAdded} from "react-icons/go";
-import TypeIt from "typeit-react";
 
 
 // import '../css/bootstrap/css/bootstrap.min.css';
@@ -32,6 +26,13 @@ function Create() {
     const conn = useSelector(state => state.conn);
     const test = useRef();
 
+    // const [sta,setsta]=useState({
+    //     ipfsHash: null,
+    //     ipfsMetaHash: null,
+    //     buffer: '',
+    //     imageUrl: null,
+    //     flag: false,
+    // });
 
     useEffect(() => {
         document.addEventListener("FilePond:addfile", readFile);
@@ -85,6 +86,9 @@ function Create() {
             });
             console.log('민트할때나오는거',conn.shopInstance.mint)
 
+            // const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
+            // console.log(nowTime);
+            //NftCount ++
         }
     }
 
@@ -114,37 +118,24 @@ function Create() {
         dispatch(setipfsMetaHash(ipfsMetaHash));
     }
     
+//     const handleRead = async()=>{
+//         const handleRead = await conn.shopInstance.readAllAddresses();
+//         console.log(handleRead, '주소나왕!!!');
+//     }
+//     const dd="QmehFe5ghQnsdoFepxpzG5sAFLtneGYrjmM3mNyLygnr9B";
+//    const handlemetahash=async()=>{
+//     const dododo=  await axios.get( "https://gateway.ipfs.io/ipfs/QmehFe5ghQnsdoFepxpzG5sAFLtneGYrjmM3mNyLygnr9B");
+//     console.log("sibal",dododo);    
+//     }
 
     return (
-        <div>
-        <div className="create-container">
-            {/*header start */}
-          <header>
-            <div className="create-header-inner">
-              <div className="create-logo">
-                <Link to="/"><img src="/images/logo-white.png"></img></Link>
-              </div>
-              <div className='create-gnb'>
-                <Link to="/Create" ><GoDiffAdded className="gnb-1"/></Link>
-                <Link to="/Market" ><FaShopify className="gnb-2"/></Link>
-                <Link to="/Mypage" ><BiUserCircle className="gnb-3"/></Link>
-                <Link to="/Signin" ><BiWallet className="gnb-4"/></Link>
-              </div>
+        <div className="container">
+            <div style={{textAlign: 'center'}}>
+            <img src={logo} alt="ipfs-logo" width={70} height={70}/>
+                    <h1>IPFS Image Upload</h1>
+                    <br/><br/>
             </div>
-          </header>
-          {/*welcome start */}
-
-        <section className="create-welcome">
-          <div className="create-slideshow">
-            
-             
-          </div>
-          <div className="create-welcome-heading">
-              
-            <h1>
-              Make Your Own NFT On U1L.
-            </h1>
-            <div className="create-welcome-upload">
+            <div>
             <FilePond ref={test}
                               onupdatefiles={(fileItems) => {
                                   // Set current file objects to sta
@@ -152,7 +143,7 @@ function Create() {
                                     fileItems.map(fileItem => fileItem.file)
                               ));
                               }}>
-                            
+                            {/* > */}
                         {upload.files.map(file => (
                             <input type="file" key={file} src={file} />
                         ))}
@@ -160,25 +151,35 @@ function Create() {
             </FilePond>
             </div>
             <div>
-              {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
-            </div>
-            <button  onClick={handleUpload}>Upload</button>
-            <div className="create-welcome-btns">
-                  {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
-            <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
-                <div >
-                  
-                    <button onClick={handleMint}>Mint</button>
-                    <button href="#" onClick={handleReset}>Reset</button>
-                 
+                    {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
                 </div>
-            </div>
-          </div>
-        </section>
-              
-            </div>
+                <div style={{marginTop:"10px"}}>
+                    <div>
+                      
+                            <button onClick={handleUpload}>
+                                Upload
+                            </button>
+                       
+                    </div>
+                </div>
+                {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
+                <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload} conn={conn}/>
+                <div>
+                    <button onClick={handleMint}>
+                        Mint
+                    </button> 
+                    <button href="#" onClick={handleReset}>
+                        Reset
+                    </button>
+                
+                    <button onClick={handleGet}>콘솔에 발행한 NFT목록</button>
+                    {/* <button onClick={handleRead}> 주소나왕!!</button>
+                    <button onClick={handlemetahash}>메타나와! </button> */}
+
+
+                </div>
         </div>
-        )
+    )
 }
 
 export default Create

@@ -7,8 +7,8 @@ function First() {
            
             <div><Link to="create"> 만들기 </Link></div>
             <div><Link to="signin">계정연결</Link></div>
-            <Link to="market">탐색하기</Link>
-            
+            <div><Link to="market">탐색하기</Link></div>
+            <Link to="my">마이</Link>
         </div>
     )
 }
