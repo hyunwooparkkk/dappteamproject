@@ -19,37 +19,3 @@
 .create-welcome-upload-wrapper{
     font-family: 'NEXON Lv2 Gothic';
 }
-.create-welcome-upload-inner{
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
-.create-welcome-upload-inner-left{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    float: left;
-    width: 50%;
-    /* transform: translateX(-10%); */
-}
-.create-welcome-upload-inner-right{
-    position: absolute;
-    top:3px;
-    left: 0;
-
-    transform: translateX(40%);
-    width: 50%;
-}
-.create-welcome-upload-inner-right input:focus{
-    outline-style: none;
-    
-}
-.create-welcome-upload-inner-right input[type="text"]{
-    width: 370px;
-    line-height: 20px;
-    border-bottom: #fbfbfb;
-    outline: none;
-    font-family: 'NEXON Lv2 Gothic';
-    
-    
-}

@@ -1,12 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import Create from './components/Create';
+import Create from './container/Create';
 import Home from './container/Home';
+import Market from './container/Market';
 import Signin from './components/Signin';
-import WOW from 'wowjs';
-import Slider from "react-slick";
-
+import Product from './components/Product';
+import Mypage from './components/Mypage';
 
 
 function App() {
@@ -18,6 +17,9 @@ function App() {
           <Route path="/" exact component={Home}></Route>
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/create" component={Create} />
+          <Route exact path="/market" component={Market} />
+          <Route exact path="/my" component={Mypage} />
+          <Route exact path="/product/:key1?/:key2?" component={Product}/>
         </Switch>
       </BrowserRouter>
     </div>

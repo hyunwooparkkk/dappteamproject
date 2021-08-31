@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import Slider from "react-slick";
-import WOW from 'wowjs';
-import TypeIt from "typeit-react";
+// import WOW from 'wowjs';
+// import TypeIt from "typeit-react";
 import HomePage from "../css/homepage.css";
 import { BiUserCircle , BiWallet } from "react-icons/bi";
 import {FaShopify} from "react-icons/fa";

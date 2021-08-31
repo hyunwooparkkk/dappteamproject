@@ -11,7 +11,9 @@ const RESET="upload/RESET";
 const FLAG="upload/FLAG";
 const METANAME="upload/METANAME";
 const METADESC="upload/METADESC";
-const METAHASH="uoload/METAHASH";
+const METAHASH="upload/METAHASH";
+const METAPRICE="upload/METAPRICE";
+const TYPEPRICE="upload/TYPEPRICE";
 
 export const setpond=createAction(POND,(input)=>input);
 export const setfiles=createAction(FILES,(input)=>input);
@@ -23,6 +25,8 @@ export const setflag=createAction(FLAG,(input)=>input);
 export const setmetaname=createAction(METANAME,(input)=>input);
 export const setmetadesc=createAction(METADESC,(input)=>input);
 export const setmetahash=createAction(METAHASH,(input)=>input);
+export const setmetaprice=createAction(METAPRICE,(input)=>input);
+export const setmetatypeprice=createAction(TYPEPRICE,(input)=>input);
 
 
 const initialState={
@@ -36,6 +40,8 @@ const initialState={
     metaName:"",
     metaDesc:"",
     metaHash:"",
+    metatypeprice:false,
+    metaprice:0, 
 }
 
 const upload=handleActions({
@@ -81,6 +87,17 @@ const upload=handleActions({
     produce(state,(draft)=>{
         draft.metaHash=input;
     }),
+    [METAPRICE]:(state,{payload:input})=>
+    produce(state,(draft)=>{
+        draft.metaprice=input;
+    }),
+    [TYPEPRICE]:(state,{payload:input})=>
+    produce(state,(draft)=>{
+        draft.metatypeprice=input;
+    }),
+
+
+    
 },initialState)
 
 export default upload;

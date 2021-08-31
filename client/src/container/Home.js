@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import Slider from "react-slick";
 import WOW from 'wowjs';
-import TypeIt from "typeit-react";
+//import TypeIt from "typeit-react";
 import HomePage from "../css/homepage.css";
 import { BiUserCircle , BiWallet } from "react-icons/bi";
 import {FaShopify} from "react-icons/fa";
@@ -12,6 +12,9 @@ import Responsive from "../css/responsive.css";
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function Home() {
   var settings = {
@@ -77,22 +80,22 @@ function Home() {
             </div>
             <div className="welcome-heading">
               <span>
-                창의적인 아이디어를 만드는 가장 빠른 방법
+                
               </span>
               <h1>
-                An idea solution of startup for your
+                국내 유일 NFT 마켓<br></br>U1L
                 {/* <em id="typing"></em> */}
-                <em id="typing"><TypeIt
+                {/* <em id="typing"><TypeIt
                   options={{
-                    strings: ["Business strategy.", "Innovation Plan.", "Creative Idea."], // 타이핑 텍스트 입력
+                    strings: ["Business strategy.", "The Value in Blockchain", "Creative Idea."], // 타이핑 텍스트 입력
                     speed: 100, // 알파벳 타이핑 속도
                     autoStart: true, // 자동 재생 사용
                     breakLines: false, // 줄 바꿈 사용안함
                    }}
-                /></em>
+                /></em> */}
               </h1>
               <p>
-                on the KOREA's largest NFT marketplace
+                dApp based on Ethereum Network
               </p>
               <div className="welcome-btns">
                 <Link to="/Create" className="btn start">Create NFT</Link>
@@ -128,16 +131,16 @@ function Home() {
             <div className="access-inner">
                 <div className="access-content">
                     <div className="access-left">
-                        <h2>언제나 어디서나 즐겁고 편리한 액세스 스타트업 CEO들의 커뮤니티</h2>
+                        <h2>내 소중한 작품 이제 온라인으로 판매하자!</h2>
                         <p>언제나 어디서나. 즐겁고 편리한 액세스가 가능합니다.
-                            회원 가입은 쉽고 간단합니다. 무료 회원 가입 후 로그인하시면 업데이트 된 스타트업 메이트의 서비스를 받으실 수 있습니다.</p>
+                            회원 가입은 쉽고 간단합니다. 온라인 지갑 메타마스크 가입 후 연동하시면 U1L만의 다양한 작품들을 만나실 수 있습니다.</p>
                         <div className="btn-download">
                             <a href="#none"><img src="images/btn-appstore.png"/></a>
                             <a href="#none"><img src="images/btn-playstore.png"/></a>
                         </div>
                     </div>
                     <div className="access-right">
-                        <img src="/images/access-mockup.png"/>
+                        <img src="/images/access.png"/>
                     </div>
                 </div>
             </div>
@@ -247,7 +250,7 @@ function Home() {
         <section className="review">
       <div className="review-inner">
         <div className="headline-share">
-          <h1>고객들의 생생 리뷰</h1>
+          <h1>VIP들의 생생 리뷰</h1>
           <p>U1L market review</p>
         </div>
         <div className="review-content" id="feature5">
@@ -298,24 +301,24 @@ function Home() {
         <section className="focus" id="feature6">
             <div className="focus-inner">
                 <div className="headline-share">
-                    <h1>스타트업 비즈니스 커스터마이징</h1>
+                    <h1>국내 최대 및 유일 NFT 마켓</h1>
                 </div>
                 <div className="focus-content">
                     <div className="focus-item utd wow" data-wow-delay='0'>
                         <img src="images/focus-icon-01.png"/>
-                        <h3>CEO 온라인 컨텐츠 제공</h3>
+                        <h3>공들여 만든 내 작품 자랑!</h3>
                         <i className="xi-checkbox-blank"></i>
                         <p>경영, 트렌드, 리더십, 인문 분야 등 어려운 경영 전략을 키워줄 온라인 콘테츠를 제공합니다.</p>
                     </div>
                     <div className="focus-item utd wow" data-wow-delay='0.25s'>
                         <img src="images/focus-icon-02.png"/>
-                        <h3>CEO를 위한 경영 멘토링</h3>
+                        <h3>다른 사람 작품도 구경!</h3>
                         <i class="xi-checkbox-blank"></i>
                         <p>카테고리 별로 혹은 모임 검색을 통해 원하는 모임을 쉽고 빠르게 찾을 수 있습니다.</p>
                     </div>
                     <div className="focus-item utd wow" data-wow-delay='0.5s'>
                         <img src="images/focus-icon-03.png"/>
-                        <h3>CEO 오프라인 모임</h3>
+                        <h3>원하는 가격에! 경매로 싸게!</h3>
                         <i class="xi-checkbox-blank"></i>
                         <p>처음 시작하는 경영을 위해 고민 되는 부분을 다른 CEO들과 오프라인 모임에서 함께 하세요.</p>
                     </div>
@@ -326,18 +329,17 @@ function Home() {
         <section className="news" id="feature7">
             <div className="news-inner">
                 <div className="headline-share">
-                    <h1>U1L 최신 소식</h1>
+                    <h1>U1L 갤러리 미리보기</h1>
                 </div>
                 <div className="news-content">
                     <div className="news-left ltr wow">
                         <div className="news-big" onclick="location.href='https://www.naver.com/'">
                             {/* <!-- 새 탭에서 링크 열기 onclick="window.open('https://www.naver.com/','_blank')" --> */}
-                            <img src="images/news-thum-big.jpg"/>
+                            <img src="images/artwork_regular.jpg"/>
                             <div className="news-headline">
-                                <h2>Merry Christmas 2021</h2>
+                                <h2>국내 최대 NFT Market<br></br> U1L</h2>
                                 <p>
-                                    CEO 여러분~ 지금은 사회적으로 힘든 시기를 보내고 있지만 우리는 이겨낼수 있습니다. <br/>
-                                    U1L이 여러분을 응원합니다.
+                                    자신의 작품을 U1L에 올려서 얼른 자랑해보세요!
                                     <small class="date">Dec 24, 2021</small>
                                 </p>
                                 <a href="#none" class="btn-view">자세히 보기</a>
@@ -348,21 +350,21 @@ function Home() {
                         <div className="news-items">
                             <div className="news-thum" onclick="location.href='https://www.naver.com/'">
                                 <div class="news-photo">
-                                    <img src="images/news-thum-small-01.jpg"/>
+                                    <img src="images/artwork_19.jpg"/>
                                     <span class="badge new">new issue</span>
                                 </div>
                                 <p>
-                                    U1L 드디어 사무실이 확장 이전했습니다. 
+                                    ✨방금 막 올라온 작품 구경하기✨
                                 </p>
                                 <small className="date">Aug 11, 2021</small>
                             </div>
                             <div className="news-thum" onclick="location.href='https://www.naver.com/'">
                                 <div className="news-photo">
-                                    <img src="images/news-thum-small-01.jpg"/>
-                                    <span className="badge hot">hot issue</span>
+                                    <img src="images/artwork_22.jpg"/>
+                                    <span className="badge new">new issue</span>
                                 </div>
                                 <p>
-                                    U1L 드디어 사무실이 확장 이전했습니다. 
+                                    ✨방금 막 올라온 작품 구경하기✨
                                 </p>
                                 <small className="date">Aug 11, 2021</small>
                             </div>
@@ -370,21 +372,21 @@ function Home() {
                         <div className="news-items">
                             <div className="news-thum" onclick="location.href='https://www.naver.com/'">
                                 <div className="news-photo">
-                                    <img src="images/news-thum-small-01.jpg"/>
-                                    <span className="badge new">new issue</span>
+                                    <img src="images/artwork_17.jpg"/>
+                                    <span className="badge hot">hot issue</span>
                                 </div>
                                 <p>
-                                    U1L 드디어 사무실이 확장 이전했습니다. 
+                                    🎇가장 핫한 작품 구경하기🎇
                                 </p>
                                 <small className="date">Aug 11, 2021</small>
                             </div>
                             <div className="news-thum" onclick="location.href='https://www.naver.com/'">
                                 <div className="news-photo">
-                                    <img src="images/news-thum-small-01.jpg"/>
+                                    <img src="images/artwork_21.jpg"/>
                                     <span className="badge hot">hot issue</span>
                                 </div>
                                 <p>
-                                    U1L 드디어 사무실이 확장 이전했습니다. 
+                                🎇가장 핫한 작품 구경하기🎇
                                 </p>
                                 <small className="date">Aug 11, 2021</small>
                             </div>
