@@ -114,33 +114,6 @@ function Create() {
         dispatch(setipfsMetaHash(ipfsMetaHash));
     }
     
-//     const handleRead = async()=>{
-//         const handleRead = await conn.shopInstance.readAllAddresses();
-//         console.log(handleRead, '주소나왕!!!');
-//     }
-//     const dd="QmehFe5ghQnsdoFepxpzG5sAFLtneGYrjmM3mNyLygnr9B";
-//    const handlemetahash=async()=>{
-//     const dododo=  await axios.get( "https://gateway.ipfs.io/ipfs/QmehFe5ghQnsdoFepxpzG5sAFLtneGYrjmM3mNyLygnr9B");
-//     console.log("sibal",dododo);    
-//     }
-
-    // $(window).scroll(function(){
-    //     if($(window).scrollTop() > 50){
-    //       $('header , .btn-top').addClass('active')
-    //     }
-    //     else{
-    //       $('header , .btn-top').removeClass('active')
-    //     }
-    //   })
-    //   // Header Trigger
-    //   $('.trigger').click(function(){
-    //     $(this).toggleClass('active');
-    //     $('.gnb').togleClass('active');
-    //   });
-    
-    //   $('.gnb a, section').click(function(){
-    //     $('.gnb , .trigger').removeClass('active');
-    //   });
 
     return (
         <div>
@@ -164,7 +137,6 @@ function Create() {
         <section className="create-welcome">
           <div className="create-slideshow">
             
-              {/* <img src="/images/create-welcome1.jpg"/> */}
              
           </div>
           <div className="create-welcome-heading">
@@ -190,11 +162,12 @@ function Create() {
             <div>
               {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
             </div>
+            <button  onClick={handleUpload}>Upload</button>
             <div className="create-welcome-btns">
                   {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
             <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
                 <div >
-                  <button  onClick={handleUpload}>Upload</button>
+                  
                     <button onClick={handleMint}>Mint</button>
                     <button href="#" onClick={handleReset}>Reset</button>
                  
@@ -202,37 +175,6 @@ function Create() {
             </div>
           </div>
         </section>
-                    
-          
-            {/* <div className="guide-inner" style={{}}>
-            <img src={logo} alt="ipfs-logo" width={70} height={70}/>
-                    <h1>NFT 로 만들 아이템을 업로드 해주세요!</h1>
-                    <br/><br/>
-            </div> */}
-            
-          
-            {/* <div>
-                    {upload.imageUrl && <img src={upload.imageUrl} className="img-view" alt="ipfs-image" />} {upload.ipfsHash}
-                </div> */}
-                {/* <div className="create-welcome-btns">
-                  <button onClick={handleUpload}>
-                    Upload
-                  </button>
-                </div> */}
-                 
-                {/* ERC721 토큰의 메타 정보에 해당하는 JSON 파일을 IPFS에 업로드 */}
-                {/* <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload} conn={conn}/>
-                <Createupload onChangeIpfsMetaHash={handleIpfsMetaHash} upload={upload}/>
-                <div>
-                    <button onClick={handleMint}>
-                        Mint
-                    </button> 
-                    <button href="#" onClick={handleReset}>
-                        Reset
-                    </button>
-                
-                    <button onClick={handleGet}>콘솔에 발행한 NFT목록</button>
-                </div> */}
               
             </div>
         </div>
