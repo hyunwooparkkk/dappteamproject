@@ -1,0 +1,296 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*XEIcon 2.3.3 CDN*/
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* Web Fonts - Source Sans Pro */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+/* Noonnu Fonts = NEXON Lv2 Godic - Regular */
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset CSS */
+
+*{
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+/* .Link{
+    text-decoration: none;
+    color: #222;
+} */
+button, input {
+    outline: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+
+/* Default CSS */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'NEXON Lv2 Gothic', sans-serif;
+    font-size: 18px;
+    line-height: 1.7em;
+    margin: 0;
+    background-color: #fff;
+    color: #222;
+}
+body.active{
+    overflow: hidden;
+}
+section{
+    padding: 130px 0;
+}
+
+/*Section Display */
+ /* header{ display: none;} */
+/* .welcome{display: none;}
+.ceo-access{display: none;}
+.banner{display: none;}
+.feature{display: none;}
+.vision{display: none;}
+.faq{display: none;}
+.review{display: none;}
+.focus{display: none;}
+.guide{display: none;}
+.news{display: none;}
+footer{display: none;} */
+
+/* Common CSS */
+.create-container{
+    background: url('../images/create-welcome1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* height:130vh; */
+    width: 100%;
+}
+.headline-share{
+    text-align: center;
+}
+.headline-share h1 {
+    font-size: 44px;
+    position: relative;
+    padding-bottom: 20px;
+    /* border: 1px solid #000; */
+}
+.headline-share h1:after{
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 80px;
+    background: linear-gradient(to right,#6c5ce7,#a29bfe );
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.headline-share p {
+    font-size: 20px;
+}
+.btn-top{
+    position: fixed;
+    /* border: 1px solid red; */
+    right: 20px;
+    bottom: -50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.514);
+    color: #fff;
+    line-height: 43px;
+    text-align: center;
+    transition: 0.5s;
+}
+.btn-top.active{
+    bottom: 20px;
+}
+/*######################## Header Start ########################*/
+.create-container header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    transition: 0.5s;
+    
+}
+.create-header.active{
+    background-color: inherit;
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.062); */
+}
+.create-header.active .create-gnb a{
+    color: black;
+}
+.create-header-inner{
+    width: 1300px; 
+    margin: auto;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.create-logo{
+    float: left;
+}
+.create-logo img{
+    margin-top: -7px;
+    color: #fff;
+}
+.create-gnb{
+    float: right;
+}
+.create-gnb a{
+    margin: 20px;
+    font-size: 40px;
+    color: #fff;
+}
+.create-gnb a .gnb-1:hover{
+    filter: invert(41%) sepia(66%) saturate(518%) hue-rotate(160deg) brightness(95%) contrast(96%);
+    transition: 0.3s;
+}
+.create-gnb a .gnb-2:hover{
+    filter: invert(32%) sepia(35%) saturate(2155%) hue-rotate(327deg) brightness(114%) contrast(108%);
+    transition: 0.3s;
+}
+.create-gnb a .gnb-3:hover{
+    filter: invert(52%) sepia(94%) saturate(376%) hue-rotate(118deg) brightness(97%) contrast(89%);
+    transition: 0.3s;
+}
+.create-gnb a .gnb-4:hover{
+    filter: invert(76%) sepia(86%) saturate(920%) hue-rotate(355deg) brightness(99%) contrast(91%);
+    transition: 0.3s;
+}
+
+/*######################## create-welcome section Start ########################*/
+.create-welcome input:focus{
+    border: 2px solid rgb(29, 29, 29);
+  }
+.create-welcome-heading{
+    text-align: center;
+}
+.create-welcome-heading h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.2em;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    color: rgb(228, 224, 224);
+    animation: flicker  1.3s ease-in-out infinite alternate;
+}
+.create-welcome-heading .heading-upload{
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    width: 800px;
+}
+
+.image-hash{
+    font-weight: 600;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+.filepond--credits{
+    display: none;
+}
+.filepond--root .filepond--drop-label{
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.filepond--root .filepond--drop-label:hover{
+    filter: invert(52%) sepia(100%) saturate(338%) hue-rotate(160deg) brightness(87%) contrast(98%);
+    transition: .3s;
+}
+/* neon effect */
+@keyframes flicker {
+    from {
+        text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 10px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+      }
+      to {
+        text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 7px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+      }
+    }
+
+.create-welcome-btns{
+    text-align: center;
+
+    /* border: 2px solid red; */
+}
+.btn-gethash{
+    width: 100px;
+    line-height: 1.6rem;
+    cursor: pointer;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    
+}
+.create-welcome-upload-wrapper{
+    /* border: 1px solid blue; */
+    color: #fff;
+    font-weight: 600;
+}
+.create-welcome-upload-inner{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+.create-welcome-upload-inner-left{
+    color: #fff;
+    margin-right: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    transform: translateY(-14px);
+}
+.create-welcome-upload-inner-right input:focus{
+    outline-style: none;   
+}
+.create-welcome-upload-inner-right input[type="text"]{
+    margin-bottom: 10px;
+    width: 370px;
+    height: 28px;
+    line-height: 20px;
+    /* border-bottom: #fbfbfb; */
+    outline: none;
+    font-family: 'NEXON Lv2 Gothic';
+    
+    
+}
+.create-welcome-btns button{
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color:inherit;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right:10px;
+    padding: 5px 10px;
+}
+.create-welcome-btns button:hover{
+    transition: .3s;
+    cursor: pointer;
+    background-color: #22b5c0;
+    box-shadow: 0 0 12px 0px rgba(255, 255, 255, 0.568);
+}
+.oction-inner{
+    color: #fff;
+    font-weight: normal;
+}
+.react-datepicker{
+    transform: translateX(300%);
+}

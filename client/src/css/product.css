@@ -1,0 +1,112 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*XEIcon 2.3.3 CDN*/
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* Web Fonts - Source Sans Pro */
+/* font-family: 'Source Sans Pro', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+/* Noonnu Fonts = NEXON Lv2 Godic - Regular */
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Default CSS */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'NEXON Lv2 Gothic', sans-serif;
+    font-size: 18px;
+    line-height: 1.7em;
+    margin: 0;
+    background-color: #fff;
+    color: #222;
+}
+body.active{
+    overflow: hidden;
+}
+section{
+    padding: 130px 0;
+}
+
+/* ###################### product section start############### */
+
+.product{
+    text-align: center;
+}
+.product img{
+    width: 400px;
+    height: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 2px #000;
+}
+.product-inner{
+    margin-top: 50px;
+    background-color: #fdfdfd;
+}
+.product-info{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    text-align: left;
+}
+.product-info-left{
+    margin-right: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    /* transform: translateY(-14px); */
+}
+.product-info-right{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+.product-fixed, .product-oction{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    text-align: left;
+}
+.product-fixed-left, .product-oction-left{
+    text-align: right;
+    margin-right: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+.product-fixed-right, .product-oction-right{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    transform: translateY(-1%);
+}
+.product-fixed-btn, .product-oction-btn{
+    width: 100px;
+    height: 30px;
+    line-height: 1.6em;
+    cursor: pointer;
+    background-color: #0fbcf9;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.product-fixed-btn:hover, .product-oction-btn:hover{
+    font-weight: 600;
+    transform: translateY(-4%);
+    box-shadow: 1px 1px 6px 1px rgb(43, 43, 43);
+    transition: .3s;
+}
+.product-oction-right input[type="text"]{
+    line-height: 1.6rem;
+}
+.product-oction-btn{
+    margin-left: 40px;
+}

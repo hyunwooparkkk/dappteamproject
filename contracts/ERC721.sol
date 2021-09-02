@@ -94,6 +94,7 @@ contract ERC721 {
         address _to,
         uint256 _tokenId
     ) public payable;
+    
 
     /// @notice Change or reaffirm the approved address for an NFT
     /// @dev The zero address indicates there is no approved address.

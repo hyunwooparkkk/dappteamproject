@@ -1,0 +1,172 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*XEIcon 2.3.3 CDN*/
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* Web Fonts - Source Sans Pro */
+/* font-family: 'Source Sans Pro', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+/* Noonnu Fonts = NEXON Lv2 Godic - Regular */
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Default CSS */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'NEXON Lv2 Gothic', sans-serif;
+    font-size: 18px;
+    line-height: 1.7em;
+    margin: 0;
+    background-color: #fff;
+    color: #222;
+}
+body.active{
+    overflow: hidden;
+}
+section{
+    padding: 130px 0;
+}
+
+/*######################## Header Start ########################*/
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    transition: 0.5s;
+    
+}
+.header.active{
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.062);
+}
+.header-inner{
+    width: 1300px; 
+    margin: auto;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.logo{
+    float: left;
+}
+.logo img{
+    margin-top: -7px;
+}
+.gnb{
+    float: right;
+}
+.gnb a{
+    margin: 20px;
+    font-size: 40px;
+}
+.gnb a .gnb-1:hover{
+    filter: invert(41%) sepia(66%) saturate(518%) hue-rotate(160deg) brightness(95%) contrast(96%);
+    transition: 0.3s;
+}
+.gnb a .gnb-2:hover{
+    filter: invert(32%) sepia(35%) saturate(2155%) hue-rotate(327deg) brightness(114%) contrast(108%);
+    transition: 0.3s;
+}
+.gnb a .gnb-3:hover{
+    filter: invert(52%) sepia(94%) saturate(376%) hue-rotate(118deg) brightness(97%) contrast(89%);
+    transition: 0.3s;
+}
+.gnb a .gnb-4:hover{
+    filter: invert(76%) sepia(86%) saturate(920%) hue-rotate(355deg) brightness(99%) contrast(91%);
+    transition: 0.3s;
+}
+
+/* ########## mypage-inner ############# */
+.mypage{
+    text-align: center;
+}
+.mypage-inner{
+    /* width: 1340px; */
+    text-align: center;
+    margin: 40px;
+}
+.mypage-address .address-title{
+    font-family: 'NEXON Lv2 Gothic';
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 30px;
+}
+
+.mypage-address .address-desc{
+    font-family: 'NEXON Lv2 Gothic';
+    font-size: 24px;
+    font-weight: 500;
+}
+.mypage-address p{
+    font-family: 'NEXON Lv2 Gothic';
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+}
+.items-wrapper{
+    display: block;
+    float: left;
+}
+.myitems-inner{
+    text-align: center;
+    margin-block: 30px;
+    margin-right: 30px;
+    display: inline-block;
+    border: 2px solid #dbdbdb;
+    border-radius: 10px;
+    
+}
+.myitems-inner:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgb(78, 78, 78);
+    transform: translateY(-2%);
+    transition: 0.5s;
+}
+.myitems-inner button{
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.myitems-inner button:hover{
+    font-weight: 600;
+    background-color: #d63031;
+    color: #fff;
+    transition: .3s;
+}
+.myitems-title{
+    font-family: 'NEXON Lv2 Gothic';
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    border-bottom: 1px solid #dbdbdb;
+}
+.myitems-inner img{
+    display: inline;
+    width: 300px;
+    height: 280px;
+    /* border: 2px solid red; */
+}
+.myitem-del-btn{
+    margin: auto;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+
+}
