@@ -20,13 +20,12 @@ function Product() {
     const [bidprice,setbidprice]=useState();
 
     const onhandlebuy= async(price,user,num)=>{
-      await conn.shopInstance.transferFrom(conn.myAccount,user,num,{
+      await conn.shopInstance.transferFrom(user,conn.myAccount,num,{
         from: conn.myAccount,
-        to: user,
-            gas: 30000, 
-            value: Web3.utils.toWei(price, 'ether')
+        value: Web3.utils.toWei(String(price),"ether")
         })
       }
+ 
 
     const onhandlebid =async(bidprice,initprice)=>{
         if(initprice>=bidprice){

@@ -60,24 +60,24 @@ contract ERC721 {
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
     /// @param data Additional data with no specified format, sent in call to `_to`
-    function safeTransferFrom(
-        address _from,
-        address _to,
-        uint256 _tokenId,
-        bytes memory data
-    ) public payable;
+    // function safeTransferFrom(
+    //     address _from,
+    //     address _to,
+    //     uint256 _tokenId,
+    //     bytes memory data
+    // ) public payable;
 
-    /// @notice Transfers the ownership of an NFT from one address to another address
-    /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to "".
-    /// @param _from The current owner of the NFT
-    /// @param _to The new owner
-    /// @param _tokenId The NFT to transfer
-    function safeTransferFrom(
-        address _from,
-        address _to,
-        uint256 _tokenId
-    ) public payable;
+    // /// @notice Transfers the ownership of an NFT from one address to another address
+    // /// @dev This works identically to the other function with an extra data parameter,
+    // ///  except this function just sets data to "".
+    // /// @param _from The current owner of the NFT
+    // /// @param _to The new owner
+    // /// @param _tokenId The NFT to transfer
+    // function safeTransferFrom(
+    //     address _from,
+    //     address _to,
+    //     uint256 _tokenId
+    // ) public payable;
 
     /// @notice Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE
     ///  TO CONFIRM THAT `_to` IS CAPABLE OF RECEIVING NFTS OR ELSE
@@ -90,8 +90,8 @@ contract ERC721 {
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
     function transferFrom(
-        address _from,
-        address _to,
+        address payable _from,
+        address  _to,
         uint256 _tokenId
     ) public payable;
     

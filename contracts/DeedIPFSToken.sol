@@ -10,9 +10,8 @@ contract DeedIPFSToken is ERC721, ERC165 {
     using SafeMath for uint256;
     using Address for address;
 
-    address payable public owner;
+    address payable public owner = msg.sender;
     mapping(bytes4 => bool) supportedInterfaces;
-
     mapping(uint256 => address) tokenOwners;
     mapping(address => uint256) balances;
     mapping(uint256 => address) allowance;
@@ -90,42 +89,41 @@ contract DeedIPFSToken is ERC721, ERC165 {
     }
 
 
-     function safeTransferFrom(
-        address _from,
-        address _to,
-        uint256 _tokenId,
-        bytes memory data
-    ) public payable {
-        transferFrom(_from, _to, _tokenId);
+    //  function safeTransferFrom(
+    //     address _from,
+    //     address  _to,
+    //     uint256 _tokenId,
+    //     bytes memory data
+    // ) public payable {
+    //     transferFrom(_from, _to, _tokenId);
+    //     //check if _to is CA
+    //     if (_to.isContract()) {
+    //         bytes4 result = ERC721TokenReceiver(_to).onERC721Received(
+    //             msg.sender,
+    //             _from,
+    //             _tokenId,
+    //             data
+    //         );
 
-        //check if _to is CA
-        if (_to.isContract()) {
-            bytes4 result = ERC721TokenReceiver(_to).onERC721Received(
-                msg.sender,
-                _from,
-                _tokenId,
-                data
-            );
+    //         require(
+    //             result ==
+    //                 bytes4(
+    //                     keccak256(
+    //                         "onERC721Received(address,address,uint256,bytes)"
+    //                     )
+    //                 ),
+    //             "receipt of token is NOT completed"
+    //         );
+    //     }
+    // }
 
-            require(
-                result ==
-                    bytes4(
-                        keccak256(
-                            "onERC721Received(address,address,uint256,bytes)"
-                        )
-                    ),
-                "receipt of token is NOT completed"
-            );
-        }
-    }
-
-    function safeTransferFrom(
-        address _from,
-        address _to,
-        uint256 _tokenId
-    ) public payable {
-        safeTransferFrom(_from, _to, _tokenId, "");
-    }
+    // function safeTransferFrom(
+    //     address _from,
+    //     address _to,
+    //     uint256 _tokenId
+    // ) public payable {
+    //     safeTransferFrom(_from, _to, _tokenId, "");
+    // }
 
 
     //////////////////////////////////////////////////////////////////
@@ -194,7 +192,6 @@ contract DeedIPFSToken is ERC721, ERC165 {
         allNFTs.push(allNFT(tokenId, ipfsHash, msg.sender ));
         tokenURIs[tokenId] = Strings.strConcat(baseTokenURI(), ipfsHash);
         emit Transfer(address(0), msg.sender, tokenId);
-        
     }
 
     // function auction(){
@@ -203,16 +200,21 @@ contract DeedIPFSToken is ERC721, ERC165 {
     //     }
     // }
 
+ 
+
+  
+
      /////////////////////////////보내기/////////////////////////////////////
-    function transferFrom( address _from, address _to, uint256 _tokenId) public payable {
+    function transferFrom( address payable  _from, address   _to, uint256 _tokenId ) public payable {
         tokenOwners[_tokenId] = _to;
         balances[_from] = balances[_from].sub(1);
         balances[_to] = balances[_to].add(1);
+        _from.transfer(msg.value);
         emit Transfer(_from, _to, _tokenId);
     }
     
 
-    ///올려놨던 NFT를 삭제하는 함수 --실험////////////////
+    ///올려놨던 NFT를 삭제하는 함수 ////////////////
     function burn(uint256 _tokenId) external {
         for(uint i=0;i<allNFTs.length;i++){
             if(allNFTs[i].tokenId ==_tokenId){

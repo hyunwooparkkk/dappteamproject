@@ -1193,7 +1193,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.2",
-  "updatedAt": "2021-08-31T14:31:32.747Z",
+  "updatedAt": "2021-09-03T00:28:29.478Z",
   "devdoc": {
     "details": "Collection of functions related to the address type",
     "methods": {}
