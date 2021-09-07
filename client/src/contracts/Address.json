@@ -7,7 +7,7 @@
   "sourceMap": "98:1746:0:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
   "deployedSourceMap": "98:1746:0:-;;;;;;;;",
   "source": "pragma solidity ^0.5.5;\r\n\r\n/**\r\n * @dev Collection of functions related to the address type\r\n */\r\nlibrary Address {\r\n    /**\r\n     * @dev Returns true if `account` is a contract.\r\n     *\r\n     * This test is non-exhaustive, and there may be false-negatives: during the\r\n     * execution of a contract's constructor, its address will be reported as\r\n     * not containing a contract.\r\n     *\r\n     * IMPORTANT: It is unsafe to assume that an address for which this\r\n     * function returns false is an externally-owned account (EOA) and not a\r\n     * contract.\r\n     */\r\n    function isContract(address account) internal view returns (bool) {\r\n        // This method relies in extcodesize, which returns 0 for contracts in\r\n        // construction, since the code is only stored at the end of the\r\n        // constructor execution.\r\n\r\n        // According to EIP-1052, 0x0 is the value returned for not-yet created accounts\r\n        // and 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470 is returned\r\n        // for accounts without code, i.e. `keccak256('')`\r\n        bytes32 codehash;\r\n        bytes32 accountHash = 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;\r\n        // solhint-disable-next-line no-inline-assembly\r\n        assembly { codehash := extcodehash(account) }\r\n        return (codehash != 0x0 && codehash != accountHash);\r\n    }\r\n\r\n    /**\r\n     * @dev Converts an `address` into `address payable`. Note that this is\r\n     * simply a type cast: the actual underlying value is not changed.\r\n     *\r\n     * NOTE: This is a feature of the next version of OpenZeppelin Contracts.\r\n     * @dev Get it via `npm install @openzeppelin/contracts@next`.\r\n     */\r\n    function toPayable(address account) internal pure returns (address payable) {\r\n        return address(uint160(account));\r\n    }\r\n}",
-  "sourcePath": "/home/byeonggoon/work/DAPP/LASTDAY/contracts/Address.sol",
+  "sourcePath": "/home/jinwood/work/U1l/contracts/Address.sol",
   "ast": {
     "absolutePath": "project:/contracts/Address.sol",
     "exportedSymbols": {
@@ -1193,7 +1193,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.2",
-  "updatedAt": "2021-09-03T00:28:29.478Z",
+  "updatedAt": "2021-09-05T01:42:02.349Z",
   "devdoc": {
     "details": "Collection of functions related to the address type",
     "methods": {}
